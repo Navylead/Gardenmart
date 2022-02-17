@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<skills>
+<skill1>Командная строка (terminal) Linux</skill1>
+<skill2>Основы SQL (Create, Delete, Drop, Insert Into, Select, From, Where, Join)</skill2>
+<skill3>Нагрузочное тестирование в Jmeter</skill3>
+<skill4>Тестирование API через Postman (JS, автотесты API)</skill4>
+</skills>
