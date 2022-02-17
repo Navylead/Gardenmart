@@ -1,1 +1,11 @@
-
+<bugreport>
+  <id>id 1</id>
+  <description>Menu icon isn't displayed in header</description>
+  <str>
+    <step1>open url</step1>
+    <step2>scroll page down</step2>
+    <step3>scroll page up to header</step3>
+  </str>
+  <er>Page is loaded. Menu icon is displayed in header</er>
+  <ar>Page is loaded. Menu icon is not displayed in header</ar>
+  </bugreport>
