@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-<Любимый_фильм>Начало</Любимый_фильм>
-<Любимый_сериал>Во все тяжкие</Любимый_сериал>
-<Любимая_еда>Бифштекс</Любимая_еда>
-<Любимое_время_года>Весна</Любимое_время_года>
-<Страна_которую_хотели_бы_посетить>Австралия</Страна_которую_хотели_бы_посетить>
+<FavoriteMovie>Inception</FavoriteMovie>
+<FavoriteShow>Во все тяжкие</FavoriteShow>
+<FavoriteFood>Steak</FavoriteFood>
+<FavoriteSeason>Spring</FavoriteSeason>
+<CountryToVisit>Australia</CountryToVisit>
 </root>
