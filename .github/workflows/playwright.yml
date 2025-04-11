@@ -44,7 +44,9 @@ jobs:
       if: failure()
       uses: "appleboy/telegram-action@master"
       with: 
-       to: ${{secrets.TELEGRAM_CHAT_ID_FL}}
+       to: ${{secrets.TELEGRAM_CHAT_ID_GRDM}}
+       ## TELEGRAM_CHAT_ID_GRDM чат Гарденмарта
+       ## TELEGRAM_CHAT_ID_FL чат Флайви
        token: ${{secrets.TELEGRAM_BOT_TOKEN}}
        message: |
          <<<ПРЕВЫШЕНО ВРЕМЯ ЗАГРУЗКИ СТРАНИЦЫ>>>

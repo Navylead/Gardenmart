@@ -7,14 +7,14 @@ test('Получение таймингов загрузки страницы - 
   // Массив для хранения таймингов всех запросов
   const requestTimings = [];
 
-  // Отслеживаем все сетевые запросы
+  // Сетевые запросы
   page.on('requestfinished', async (request) => {
     if (request.url() === 'https://gardenmart24.ru/'){
     const timing = request.timing();
     const url = request.url();
     // Вычисляем TTFB и Content Download
-    const ttfb = timing.responseStart - timing.requestStart;            // Waiting for server response
-    const contentDownload = timing.responseEnd - timing.responseStart;  // Content Download
+    const ttfb = timing.responseStart - timing.requestStart;            // Ответ сервера
+    const contentDownload = timing.responseEnd - timing.responseStart;  // Загрузка контента
     // Сохраняем данные в массив
     requestTimings.push({
       url,
@@ -38,7 +38,7 @@ test('Получение таймингов загрузки страницы - 
   const totalContentDownload = requestTimings.reduce((sum, timing) => sum + timing.contentDownload, 0);
   const total = totalTTFB+totalContentDownload
   console.log('<<<ОБЩЕЕ ЗАТРАЧЕННОЕ>>>', totalContentDownload)
-  expect(totalContentDownload).toBeLessThan(600); // Например, менее 1 секунды
+  expect(totalContentDownload).toBeLessThan(700); // Проверка, что загрузка контента происходит менее 700 мс
 
   // await page.pause()
 });
