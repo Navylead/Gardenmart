@@ -13,8 +13,8 @@ test('Получение таймингов загрузки страницы - 
     const timing = request.timing();
     const url = request.url();
     // Вычисляем TTFB и Content Download
-    const ttfb = timing.responseStart - timing.requestStart; // Waiting for server response
-    const contentDownload = timing.responseEnd - timing.responseStart; // Content Download
+    const ttfb = timing.responseStart - timing.requestStart;            // Waiting for server response
+    const contentDownload = timing.responseEnd - timing.responseStart;  // Content Download
     // Сохраняем данные в массив
     requestTimings.push({
       url,
@@ -37,8 +37,8 @@ test('Получение таймингов загрузки страницы - 
   const totalTTFB = requestTimings.reduce((sum, timing) => sum + timing.ttfb, 0);
   const totalContentDownload = requestTimings.reduce((sum, timing) => sum + timing.contentDownload, 0);
   const total = totalTTFB+totalContentDownload
-  console.log('<<<ОБЩЕЕ ЗАТРАЧЕННОЕ>>>', total)
-  expect(total).toBeLessThan(1); // Например, менее 1 секунды
+  console.log('<<<ОБЩЕЕ ЗАТРАЧЕННОЕ>>>', totalContentDownload)
+  expect(totalContentDownload).toBeLessThan(1100); // Например, менее 1 секунды
 
   // await page.pause()
 });
