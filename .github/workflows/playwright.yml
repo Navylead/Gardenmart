@@ -1,0 +1,45 @@
+name: Gardenmart tests
+on: [push, pull_request]  
+jobs:
+  test:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      with:
+        node-version: lts/*
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps
+
+    - name: Run Playwright tests
+      run: npm run test1
+
+    - name: Generate HTML report
+      if: always() # Генерировать отчет даже если тесты упали
+      run: npx playwright show-report
+
+    - name: "Telegram notification on FAILURE"
+      if: failure()
+      uses: "appleboy/telegram-action@master"
+      with: 
+       to: ${{secrets.TELEGRAM_CHAT_ID_FL}}
+       token: ${{secrets.TELEGRAM_BOT_TOKEN}}
+       message: |
+         <<<ПРЕВЫШЕНО ВРЕМЯ ЗАГРУЗКИ СТРАНИЦЫ>>>
+         Запуск теста по ${{github.event_name}}
+       #photo: /home/runner/work/FLV/FLV/cypress/screenshots/**/*.png
+       #video: /home/runner/work/FLV/FLV/cypress/video/*.mp4
+       document: "playwright-report/index.html"
+
+
+
+        
+        
+        
+
+      

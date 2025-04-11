@@ -1,0 +1,19 @@
+{
+  "name": "gardenmart",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test1":           "npx playwright test --project=chromium --workers=1 --reporter=html tests/gdm.spec.js",
+    "testReporter":    "npx playwright test --project=chromium --workers=1 --reporter=html tests/gdm.spec.js && npx playwright show-report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.51.1",
+    "@types/node": "^22.14.0"
+  }
+}
+
+
