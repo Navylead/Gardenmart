@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test'
 
 test.describe('Тесты Гарденмарт', ()=>{
 
-test.only('Получение таймингов загрузки страницы - https://gardenmart24.ru/', async ({ page }) => {
+test('Получение таймингов загрузки страницы - https://gardenmart24.ru/', async ({ page }) => {
   // Массив для хранения таймингов всех запросов
   const requestTimings = [];
 

@@ -19,9 +19,9 @@ jobs:
     - name: Run Playwright tests
       run: npm run test1
 
-    - name: Generate HTML report
-      if: always() # Генерировать отчет даже если тесты упали
-      run: npx playwright show-report
+    #- name: Generate HTML report
+    #  if: always() # Генерировать отчет даже если тесты упали
+    #  run: npx playwright show-report
 
     - name: "Telegram notification on FAILURE"
       if: failure()
