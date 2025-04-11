@@ -1,5 +1,11 @@
 name: Gardenmart tests
-on: [push, pull_request]  
+on:   
+  pull_request:
+  push:
+  schedule:
+    - cron: '0 * * * *'      # Every HOUR
+    #- cron: '0 */2 * * *'   # Every 2 hours
+    #- cron: '0 0 * * *'     # Every day  
 jobs:
   test:
     timeout-minutes: 60

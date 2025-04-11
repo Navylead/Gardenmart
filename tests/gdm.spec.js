@@ -38,7 +38,7 @@ test('Получение таймингов загрузки страницы - 
   const totalContentDownload = requestTimings.reduce((sum, timing) => sum + timing.contentDownload, 0);
   const total = totalTTFB+totalContentDownload
   console.log('<<<ОБЩЕЕ ЗАТРАЧЕННОЕ>>>', totalContentDownload)
-  expect(totalContentDownload).toBeLessThan(1100); // Например, менее 1 секунды
+  expect(totalContentDownload).toBeLessThan(1000); // Например, менее 1 секунды
 
   // await page.pause()
 });
